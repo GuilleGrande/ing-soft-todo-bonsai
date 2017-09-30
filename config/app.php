@@ -155,6 +155,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Reliese\Coders\CodersServiceProvider::class,
 
     ],
 
@@ -203,5 +204,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    
+    
 
 ];
