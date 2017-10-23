@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 30 Sep 2017 19:55:56 +0000.
+ * Date: Sat, 30 Sep 2017 21:42:19 +0000.
  */
 
 namespace App\Models;
@@ -13,29 +13,29 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Carrito
  * 
  * @property int $id
- * @property int $id_usuario
+ * @property int $id_users
  * 
- * @property \App\Models\Usuario $usuario
+ * @property \App\Models\User $user
  * @property \Illuminate\Database\Eloquent\Collection $productos
  *
  * @package App\Models
  */
 class Carrito extends Eloquent
 {
-	protected $table = 'Carrito';
+	protected $table = 'carrito';
 	public $timestamps = false;
 
 	protected $casts = [
-		'id_usuario' => 'int'
+		'id_users' => 'int'
 	];
 
 	protected $fillable = [
-		'id_usuario'
+		'id_users'
 	];
 
-	public function usuario()
+	public function user()
 	{
-		return $this->belongsTo(\App\Models\Usuario::class, 'id_usuario');
+		return $this->belongsTo(\App\Models\User::class, 'id_users');
 	}
 
 	public function productos()

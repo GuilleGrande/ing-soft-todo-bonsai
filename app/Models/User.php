@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 30 Sep 2017 19:55:56 +0000.
+ * Date: Sat, 30 Sep 2017 21:42:19 +0000.
  */
 
 namespace App\Models;
@@ -19,6 +19,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $carritos
  *
  * @package App\Models
  */
@@ -35,4 +37,9 @@ class User extends Eloquent
 		'password',
 		'remember_token'
 	];
+
+	public function carritos()
+	{
+		return $this->hasMany(\App\Models\Carrito::class, 'id_users');
+	}
 }

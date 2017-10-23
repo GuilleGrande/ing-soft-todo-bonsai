@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 30 Sep 2017 19:55:56 +0000.
+ * Date: Sat, 30 Sep 2017 21:42:19 +0000.
  */
 
 namespace App\Models;
@@ -20,7 +20,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id_carrito
  * 
  * @property \App\Models\Carrito $carrito
- * @property \App\Models\ProductoCategorium $producto_categorium
+ * @property \App\Models\ProductoCategoria $producto_categoria
  *
  * @package App\Models
  */
@@ -47,8 +47,8 @@ class Producto extends Eloquent
 		return $this->belongsTo(\App\Models\Carrito::class, 'id_carrito');
 	}
 
-	public function producto_categorium()
+	public function producto_categoria()
 	{
-		return $this->hasOne(\App\Models\ProductoCategorium::class, 'id_producto');
+		return $this->hasOne(\App\Models\ProductoCategoria::class, 'id_producto');
 	}
 }

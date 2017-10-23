@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 30 Sep 2017 19:55:56 +0000.
+ * Date: Sat, 30 Sep 2017 21:42:19 +0000.
  */
 
 namespace App\Models;
@@ -10,17 +10,17 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class ProductoCategorium
+ * Class ProductoCategoria
  * 
  * @property int $id_producto
  * @property int $id_categoria
  * 
- * @property \App\Models\Categorium $categorium
+ * @property \App\Models\Categoria $categoria
  * @property \App\Models\Producto $producto
  *
  * @package App\Models
  */
-class ProductoCategorium extends Eloquent
+class ProductoCategoria extends Eloquent
 {
 	public $incrementing = false;
 	public $timestamps = false;
@@ -35,9 +35,9 @@ class ProductoCategorium extends Eloquent
 		'id_categoria'
 	];
 
-	public function categorium()
+	public function categoria()
 	{
-		return $this->belongsTo(\App\Models\Categorium::class, 'id_categoria');
+		return $this->belongsTo(\App\Models\Categoria::class, 'id_categoria');
 	}
 
 	public function producto()

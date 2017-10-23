@@ -11,14 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/about', function() {
     return view('about');
 });
 
 Route::auth();
+Route::get('/','Front@index');
+Route::get('/products','Front@products');
+Route::get('/products/details/{id}','Front@product_details');
+Route::get('/products/categories','Front@product_categories');
+Route::get('/products/brands','Front@product_brands');
+Route::get('/blog','Front@blog');
+Route::get('/blog/post/{id}','Front@blog_post');
+Route::get('/contact-us','Front@contact_us');
+Route::get('/login','Front@login');
+Route::get('/logout','Front@logout');
+Route::get('/cart','Front@cart');
+Route::get('/checkout','Front@checkout');
+Route::get('/search/{query}','Front@search');
 
-Route::get('/home', 'HomeController@index');
+Route::get('blade', function () {
+    $drinks = array('Rum','Beer','Whisky');
+    return view('page',array('name' => 'Guillermo', 'day' => 'Friday', 'drinks' => $drinks));
+});
