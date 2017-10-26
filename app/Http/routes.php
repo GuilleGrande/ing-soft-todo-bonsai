@@ -29,8 +29,3 @@ Route::get('/logout','Front@logout');
 Route::get('/cart','Front@cart');
 Route::get('/checkout','Front@checkout');
 Route::get('/search/{query}','Front@search');
-
-Route::get('blade', function () {
-    $drinks = array('Rum','Beer','Whisky');
-    return view('page',array('name' => 'Guillermo', 'day' => 'Friday', 'drinks' => $drinks));
-});
